@@ -8,11 +8,11 @@ function swap(arr, x, y) {
 }
 
 function partition(arr, x, y) {
-  let pivot = arr[Math.floor((x + y) / 2)]
-  let left
-  let right
-
-  while (left < right) {
+  var pivot = arr[Math.floor((x + y) / 2)]
+  var left = x
+  var right = y
+  
+  while (left <= right) {
     while (arr[left] < pivot) {
       left++
     }
@@ -37,14 +37,18 @@ function quickSort(arr, left, right) {
     index = partition(arr, left, right)
 
     if (left < index - 1) {
-      partition(arr, left, right)
+      quickSort(arr, left, index - 1)
     }
 
     if (right > index) {
-      partition(arr, left, right)
+      quickSort(arr, index, right)
     }
   }
 
   return arr
 
 }
+
+console.log('Original Array: ' + array)
+
+console.log('New Array After : ' + quickSort(array, 0, array.length - 1))
