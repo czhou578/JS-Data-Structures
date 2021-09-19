@@ -1,7 +1,5 @@
 let array = [0, 2, 3, 4, 5, 6]
 
-
-
 function binarySearch(number, array, startIdx, endIdx) {
     if (startIdx > endIdx) {
         return false
