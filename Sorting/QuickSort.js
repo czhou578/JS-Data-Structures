@@ -7,7 +7,7 @@ function swap(arr, x, y) {
   arr[y] = first
 }
 
-function partition(arr, x, y) {
+function partition(arr, x, y) { //partitioning the array into left and right
   var pivot = arr[Math.floor((x + y) / 2)]
   var left = x
   var right = y
