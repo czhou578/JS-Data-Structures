@@ -6,8 +6,8 @@ class ListNode {
 }
 
 class LinkedList {
-  constructor(head) {
-    this.head = null
+  constructor(head = null) {
+    this.head = head
   }
 
   emptyList() {
@@ -16,10 +16,11 @@ class LinkedList {
   
   numNodes() {
     let count = 0;
-    let start = this.head
+    var start = this.head
+
     while(start) {
       count++;
-      start = start.next
+      start = start.nextNode
     }
   
     return count
@@ -40,7 +41,11 @@ class LinkedList {
   }
 }
 
-let node1 = ListNode(2)
-let node2 = ListNode(4)
+let node1 = new ListNode(2)
+let node2 = new ListNode(4)
 node1.nextNode = node2;
+
+let list = new LinkedList(node1)
+console.log(list.head.nextNode);
+console.log('number of nodes: ' + list.numNodes());
 
